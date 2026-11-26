@@ -19,7 +19,8 @@ def fail(msg):
 
 
 def main():
-    src = "news.png"
+    here = os.path.dirname(os.path.abspath(__file__))
+    src = os.path.join(here, "news.png")
     if not os.path.isfile(src):
         return fail("news.png not found")
     with open(src, "rb") as f:
